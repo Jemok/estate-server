@@ -12,6 +12,9 @@ class DataminingOptionsTableSeeder extends Seeder
      */
     public function run()
     {
+
+        DataminingOption::truncate();
+
         $model = new DataminingOption();
 
         $model->car_park       = 0;
