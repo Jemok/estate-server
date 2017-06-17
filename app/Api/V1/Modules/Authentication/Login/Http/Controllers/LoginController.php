@@ -31,6 +31,6 @@ class LoginController extends Controller
         }
 
         // We authenticate the user and return a response
-        return $this->authenticate(['registration_number' => $request->registration_number, 'password' => $request->password], new LoginTransformer(), new RoleRepository());
+        return $this->authenticate(['email' => $request->email, 'password' => $request->password], new LoginTransformer());
     }
 }

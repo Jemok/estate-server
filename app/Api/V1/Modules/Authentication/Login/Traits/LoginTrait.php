@@ -20,7 +20,7 @@ trait LoginTrait
      * @param LoginTransformer $loginTransformer
      * @return array
      */
-    public function authenticate(array $authenticationData, LoginTransformer $loginTransformer, RoleRepository $roleRepository){
+    public function authenticate(array $authenticationData, LoginTransformer $loginTransformer){
 
         // We try to authenticate the user, if the authentication fails, we catch an authentication Exception
         try {
@@ -37,10 +37,8 @@ trait LoginTrait
         // and pass the array items 1. token
         $authenticationData = [
             'token'           => $token,
-            'name'            => Auth::user()->first_name . ' ' . Auth::user()->second_name,
-            'role'            => $roleRepository->getUserRoles(Auth::user()),
-            'profPic'         => Auth::user()->prof_pic,
-            'roleDescription' => $roleRepository->getUserRolesDescription(Auth::user())
+            'name'            => Auth::user()->name,
+            'email'           => Auth::user()->email
         ];
 
         // We transform an authentication response

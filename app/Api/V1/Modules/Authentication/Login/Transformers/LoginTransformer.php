@@ -17,10 +17,8 @@ class LoginTransformer
     public function transform(array $authenticationData){
         return [
             'token'                         => (string) $authenticationData['token'],
-            'role'                          => (string) $authenticationData['role'],
             'name'                          => (string) $authenticationData['name'],
-            'profilePicDownloadLink'        => (string) $authenticationData['profPic'],
-            'roleDescription'               => (string) $authenticationData['roleDescription']
+            'email'                         => (string) $authenticationData['email']
         ];
     }
 }

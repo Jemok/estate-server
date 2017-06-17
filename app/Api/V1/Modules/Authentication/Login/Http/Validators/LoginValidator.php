@@ -19,7 +19,7 @@ class LoginValidator
 
     // The rules used during authenticationData validation
     private $rules = [
-      'registration_number'  => 'required',
+      'email'  => 'required',
       'password'            => 'required'
     ];
 

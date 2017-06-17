@@ -8,15 +8,8 @@
 
 namespace App\Api\V1\Modules\DataMining\Repositories;
 
-
-use App\DataminingOption;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
 class DataMiningRepository
 {
-
-    public $x = 0;
 
     public function getRows($sql) {
 
@@ -24,9 +17,9 @@ class DataMiningRepository
 
         $result = mysqli_query($link, $sql);
 
-        while($row = mysqli_fetch_array($result))
+        while($row = mysqli_fetch_array($result)){
             $ret[] = $row;
-
+        }
 
         return $ret;
     }
@@ -40,6 +33,7 @@ class DataMiningRepository
 
         $instance = $request['instance'];
 
+
         for($i = 0; $i < count($rows); $i++) {
 
             for($j = 1; $j < 11; $j++) {
@@ -51,12 +45,15 @@ class DataMiningRepository
 
         asort($distance);
 
+
         $kclosest = [];
 
+        $x = 0;
+
         foreach($distance as $key => $d) {
-            if(++$this->x <= 9) {
+            if(++$x <= 2) {
                 array_push($kclosest,$rows[$key][11]);
-//            $kclosest[$rows[$key][11]]++;
+//                 $kclosest[$rows[$key][11]]++;
                 $newdistance[$key] = $d;
             }
         }
@@ -68,6 +65,6 @@ class DataMiningRepository
 
 //        var_dump($diagnosis);
 
-        return (array) $newdistance;
+        return $newdistance;
     }
 }
