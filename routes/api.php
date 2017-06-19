@@ -26,6 +26,12 @@ $api->version('v1', function ($api) {
 
     $api->group(['prefix' => 'properties', 'namespace' => 'App\Api\V1\Modules\Property\Http\Controllers'], function($api){
         $api->post('/', 'PropertyController@index');
+        $api->post('/add', 'PropertyController@store');
+        $api->post('/show', 'PropertyController@show');
+        $api->post('/update', 'PropertyController@update');
+        $api->post('/delete', 'PropertyController@delete');
+        $api->post('/image', 'PropertyController@image');
+
     });
 
     $api->group(['prefix' => 'auth', 'namespace' => 'App\Api\V1\Modules\Authentication\Login\Http\Controllers'], function($api){

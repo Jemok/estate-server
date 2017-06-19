@@ -13,7 +13,7 @@ class DataMiningRepository
 
     public function getRows($sql) {
 
-        $link = mysqli_connect("localhost", "root", "*jackie123#", 'real_estate');
+        $link = mysqli_connect(env('DB_HOST'), env('DB_USERNAME'), env('DB_PASSWORD'), env('DB_DATABASE'));
 
         $result = mysqli_query($link, $sql);
 
@@ -27,6 +27,7 @@ class DataMiningRepository
 
     public function search(array $request) {
 
+        //
         $rows = $this->getRows("SELECT * FROM datamining_options");
 
         $distance = array_fill(0, count($rows), 0);
@@ -51,7 +52,7 @@ class DataMiningRepository
         $x = 0;
 
         foreach($distance as $key => $d) {
-            if(++$x <= 2) {
+            if(++$x <= $request['range']) {
                 array_push($kclosest,$rows[$key][11]);
 //                 $kclosest[$rows[$key][11]]++;
                 $newdistance[$key] = $d;

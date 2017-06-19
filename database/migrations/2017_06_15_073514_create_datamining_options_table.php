@@ -15,7 +15,7 @@ class CreateDataminingOptionsTable extends Migration
     {
         Schema::create('datamining_options', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('car_park');
+            $table->integer('car_pack');
             $table->integer('garden');
             $table->integer('one_bedroom');
             $table->integer('two_bedroom');
@@ -30,6 +30,10 @@ class CreateDataminingOptionsTable extends Migration
             $table->string('location');
             $table->text('description');
             $table->integer('price');
+            $table->string('owner');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

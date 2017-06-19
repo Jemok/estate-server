@@ -31,6 +31,9 @@ class DataminingOptionsTableSeeder extends Seeder
         $model->house_name     = 'Makanjo Flats';
         $model->location       = 'Juja East';
         $model->description    = 'A good house';
+        $model->owner          = 'Tom Cruise';
+        $model->email          = 'tom@gmail.com';
+        $model->phone          = '0723654123';
         $model->price          = 700000;
 
         $model->save();
@@ -51,6 +54,9 @@ class DataminingOptionsTableSeeder extends Seeder
         $model->house_name     = 'Budapest House';
         $model->location       = 'Thika East';
         $model->description    = 'A good house';
+        $model->owner          = 'Van Dame';
+        $model->email          = 'van@gmail.com';
+        $model->phone          = '0723634123';
         $model->price          = 500000;
 
         $model->save();
@@ -71,6 +77,9 @@ class DataminingOptionsTableSeeder extends Seeder
         $model->house_name     = 'Railside Apartments';
         $model->location       = 'Kilimani East';
         $model->description    = 'Awesome house';
+        $model->owner          = 'Robocop';
+        $model->email          = 'robo@gmail.com';
+        $model->phone          = '0723636123';
         $model->price          = 100000;
 
         $model->save();
@@ -91,6 +100,9 @@ class DataminingOptionsTableSeeder extends Seeder
         $model->house_name     = 'Savy Apartments';
         $model->location       = 'Kahawa Sukari';
         $model->description    = 'Perfect home';
+        $model->owner          = 'Robocop Master';
+        $model->email          = 'master@gmail.com';
+        $model->phone          = '0723436123';
         $model->price          = 20000;
 
         $model->save();
