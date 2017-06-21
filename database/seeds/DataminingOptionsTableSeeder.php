@@ -17,7 +17,7 @@ class DataminingOptionsTableSeeder extends Seeder
 
         $model = new DataminingOption();
 
-        $model->car_park       = 0;
+        $model->car_pack       = 0;
         $model->garden         = 1;
         $model->one_bedroom    = 0;
         $model->two_bedroom    = 1;
@@ -40,7 +40,7 @@ class DataminingOptionsTableSeeder extends Seeder
 
         $model = new DataminingOption();
 
-        $model->car_park       = 1;
+        $model->car_pack       = 1;
         $model->garden         = 0;
         $model->one_bedroom    = 0;
         $model->two_bedroom    = 0;
@@ -63,7 +63,7 @@ class DataminingOptionsTableSeeder extends Seeder
 
         $model = new DataminingOption();
 
-        $model->car_park       = 1;
+        $model->car_pack       = 1;
         $model->garden         = 1;
         $model->one_bedroom    = 1;
         $model->two_bedroom    = 0;
@@ -86,7 +86,7 @@ class DataminingOptionsTableSeeder extends Seeder
 
         $model = new DataminingOption();
 
-        $model->car_park       = 1;
+        $model->car_pack       = 1;
         $model->garden         = 1;
         $model->one_bedroom    = 1;
         $model->two_bedroom    = 0;
