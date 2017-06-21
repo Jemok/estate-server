@@ -28,7 +28,7 @@ class PropertyRepository
 
         $model = new DataminingOption();
 
-        $model->car_park       = $propertyData['parking'];
+        $model->car_pack       = $propertyData['parking'];
         $model->garden         = $propertyData['garden'];
         $model->one_bedroom    = $propertyData['one_bedroom'];
         $model->two_bedroom    = $propertyData['two_bedroom'];
@@ -54,7 +54,7 @@ class PropertyRepository
 
         $model = DataminingOption::findOrFail($propertyData['houseId']);
 
-        $model->car_park       = $propertyData['parking'];
+        $model->car_pack       = $propertyData['parking'];
         $model->garden         = $propertyData['garden'];
         $model->one_bedroom    = $propertyData['one_bedroom'];
         $model->two_bedroom    = $propertyData['two_bedroom'];
